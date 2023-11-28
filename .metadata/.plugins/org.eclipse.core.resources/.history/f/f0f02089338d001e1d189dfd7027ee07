@@ -61,13 +61,10 @@ public class Worker {
 	}
 	
 	public double income(int year, int month) {
-		int i = 0;
 		double sum = baseSalary;
 		Calendar cal = Calendar.getInstance();
-		System.out.println("calendario " + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(month) + "/" + cal.get(Calendar.YEAR));
 		
-		do {
-			System.out.println("Entrou no for");
+		for(int i = 0; i <= contracts.size(); i++) {
 			cal.setTime(contracts.get(i).getDate());
 			int c_year = cal.get(Calendar.YEAR);
 			int c_month = 1 + cal.get(Calendar.MONTH);
@@ -75,8 +72,8 @@ public class Worker {
 			if(year == c_year && month == c_month) {
 				System.out.println("Está entrando no if");
 				sum = contracts.get(i).totalValue();
-			}
-		}while(i < contracts.size());
+			}			
+		}
 		return sum;
 		
 		/*
