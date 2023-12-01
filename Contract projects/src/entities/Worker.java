@@ -1,5 +1,8 @@
 package entities;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -60,37 +63,34 @@ public class Worker {
 		this.contracts.remove(contract);
 	}
 	
-	public double income(int year, int month) {
+	public double income(String monthAndYear) {
+		int month = Integer.parseInt(monthAndYear.substring(0, 2));
+		int year = Integer.parseInt(monthAndYear.substring(3));
+		
 		int i = 0;
-		double sum = baseSalary;
-		Calendar cal = Calendar.getInstance();
-		System.out.println("calendario " + cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(month) + "/" + cal.get(Calendar.YEAR));
+		
+		double sum = baseSalary;		
+		System.out.println();
 		
 		do {
-			System.out.println("Entrou no for");
-			cal.setTime(contracts.get(i).getDate());
-			int c_year = cal.get(Calendar.YEAR);
-			int c_month = 1 + cal.get(Calendar.MONTH);
+			System.out.println("Entrou no do while");			
+			
+			int c_year = contracts.get(i).getDate().getYear();
+			int c_month = contracts.get(i).getDate().getMonthValue();
+			
+			System.out.println("Realizou a extração de mês e ano");
+			
 			System.out.println("antes do if");
+			
 			if(year == c_year && month == c_month) {
 				System.out.println("Está entrando no if");
-				sum = contracts.get(i).totalValue();
+				sum += contracts.get(i).totalValue();
 			}
+			
+			i++;
+			
 		}while(i < contracts.size());
-		return sum;
 		
-		/*
-		for (HourContract c : contracts) {
-			cal.setTime(c.getDate());
-			int c_year = cal.get(Calendar.YEAR);
-			int c_month = 1 + cal.get(Calendar.MONTH);
-			System.out.println("antes do if");
-			if(year == c_year && month == c_month) {
-				System.out.println("Está entrando no if");
-				sum = c.totalValue();
-			}
-		}
 		return sum;
-		*/
 	}
 }
