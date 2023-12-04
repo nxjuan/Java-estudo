@@ -1,10 +1,6 @@
 package entities;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import entities.enumns.WorkerLevel;
@@ -72,15 +68,10 @@ public class Worker {
 		double sum = baseSalary;		
 		System.out.println();
 		
-		do {
-			System.out.println("Entrou no do while");			
+		do {		
 			
 			int c_year = contracts.get(i).getDate().getYear();
 			int c_month = contracts.get(i).getDate().getMonthValue();
-			
-			System.out.println("Realizou a extração de mês e ano");
-			
-			System.out.println("antes do if");
 			
 			if(year == c_year && month == c_month) {
 				System.out.println("Está entrando no if");
