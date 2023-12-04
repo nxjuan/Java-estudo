@@ -1,34 +1,38 @@
 package entities;
 
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Post {
-	private LocalDate moment;
+	private LocalDateTime moment;
 	private String title;
 	private String content;
 	private Integer likes;
 	
 	private List<Coment> comments = new ArrayList<>(); 
 	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	DateTimeFormatter dfmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 	
 	public Post() {
 		
 	}
 
-	public Post(LocalDate moment, String title, String content, Integer likes) {
+	public Post(LocalDateTime moment, String title, String content, Integer likes) {
 		this.moment = moment;
 		this.title = title;
 		this.content = content;
 		this.likes = likes;
 	}
 
-	public LocalDate getMoment() {
+	public LocalDateTime getMoment() {
 		return moment;
 	}
 
-	public void setMoment(LocalDate moment) {
+	public void setMoment(LocalDateTime moment) {
 		this.moment = moment;
 	}
 
@@ -66,4 +70,18 @@ public class Post {
 	public void removeComent(Coment coment) {
 		comments.remove(coment);
 	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(title + "\n");
+		sb.append(likes);
+		sb.append(" Likes - ");
+		sb.append(moment + "\n");
+		sb.append("coments:\n ");
+		for(Coment c : comments) {
+			sb.append(" " + c.getText() + "\n");
+		}
+		return sb.toString();
+	}
+	
 }

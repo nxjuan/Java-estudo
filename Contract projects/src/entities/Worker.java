@@ -74,7 +74,6 @@ public class Worker {
 			int c_month = contracts.get(i).getDate().getMonthValue();
 			
 			if(year == c_year && month == c_month) {
-				System.out.println("Está entrando no if");
 				sum += contracts.get(i).totalValue();
 			}
 			
