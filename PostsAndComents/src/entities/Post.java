@@ -77,9 +77,9 @@ public class Post {
 		sb.append(likes);
 		sb.append(" Likes - ");
 		sb.append(moment + "\n");
-		sb.append("coments:\n ");
+		sb.append("coments:\n");
 		for(Coment c : comments) {
-			sb.append(" " + c.getText() + "\n");
+			sb.append( c.getText() + "\n");
 		}
 		return sb.toString();
 	}
