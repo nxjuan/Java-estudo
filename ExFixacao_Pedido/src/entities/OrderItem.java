@@ -51,13 +51,14 @@ public class OrderItem {
 	
 	@Override
 	public String toString() {
-		return "Product Name: " 
+		return "------------------------" 
+				+ "\nProduct Name: " 
 				+ product.getName() + ",\n"
 				+ "Price: $"
 				+ price + ",\n" 
 				+ "Quantity: "
 				+ quantity + ",\n"
-				+ "Sub Total: $" + subTotal();
+				+ "Sub Total: $" + subTotal() + ",";
 	}
 	
 }
