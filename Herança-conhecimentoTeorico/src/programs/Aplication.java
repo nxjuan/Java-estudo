@@ -53,6 +53,17 @@ public class Aplication {
 		Account Acc3 = new BusinessAccount(1003, 1000.0, "Janaina", 300.0);
 		Acc3.withdraw(200.0);
 		System.out.println(Acc3.getBalance());
+		
+		// Polimorfismo
+		
+		Account x = new Account(1010, 1000.0, "Alex");
+		Account y = new SavingsAccount(1011, 1000.0, "Tim", 0.01);
+		
+		x.withdraw(50.0);
+		y.withdraw(50.0);
+		
+		System.out.println(x.getBalance());
+		System.out.println(y.getBalance());
 	}
 
 }
