@@ -38,6 +38,21 @@ public class Aplication {
 			System.out.println("Deposited!");
 		}
 		
+		// Sobreposição ou Sobrescrita
+		
+		Account Acc1 = new Account(1001, 1000.0, "James");
+		Acc1.withdraw(200.0);
+		System.out.println(Acc1.getBalance());
+		
+		Account Acc2 = new SavingsAccount(1002, 1000.0, "Fruta", 0.01);
+		Acc2.withdraw(200.0);
+		System.out.println(Acc2.getBalance());
+		
+		// Uso da palavra super (em BusinessAccount)
+		
+		Account Acc3 = new BusinessAccount(1003, 1000.0, "Janaina", 300.0);
+		Acc3.withdraw(200.0);
+		System.out.println(Acc3.getBalance());
 	}
 
 }

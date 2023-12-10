@@ -35,8 +35,8 @@ public class Account {
 		this.holder = holder;
 	}
 	
-	public void withdrow(double amount) {
-		balance -= amount;
+	public void withdraw(double amount) {
+		balance -= amount + 5.0;
 	}
 	
 	public void deposit(double amount) {
