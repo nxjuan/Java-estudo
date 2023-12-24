@@ -1,6 +1,7 @@
 package aplication;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class Program {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
+		new File("C:\\Users\\jxavier\\eclipse-workspace\\Trabalhando com Arquivos 3\\teste").mkdir();
 	}
 
 }

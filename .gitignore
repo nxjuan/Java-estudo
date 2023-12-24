@@ -30,10 +30,11 @@
 *.org
 *.eclipse
 *.core
-*.metadata/.plugins/org.eclipse.core.resources/
+*.metadata/.plugins
 *.ini
 *.dat
 *.prefs
+
 
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
