@@ -45,6 +45,7 @@ public class Aplication {
 		System.out.println("TAXES PAID: ");
 		
 		double sum = 0.0;
+		
 		for(TaxPayer p : list) {
 			System.out.println(p.getName() + " $ " + String.format("%.2f", p.tax()));
 			sum += p.tax();
